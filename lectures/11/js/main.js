@@ -1,22 +1,23 @@
 //============================================
 //-----------  STEP - 1 ----------------------
 //============================================
+/*
 
-
-/*var todos = [];
+var todos = [];
 function add() {
     var task = document.getElementById("task").value;
     todos.push(task);
     document.getElementById('todos').innerText = todos;
-}*/
+}
 
-
+This is a function which accepts a string input from user and place it in a variable and then it pushes it in the array called TODOS.
+    And we are displaying todos on website.*/
 //============================================
 //-----------  STEP - 2 ----------------------
 //============================================
+/*
 
-
-/*var todos = [];
+var todos = [];
 function add() {
     var task = document.getElementById('task').value;
     todos.push(task);
@@ -34,15 +35,15 @@ function show() {
         ul.appendChild(li);
     }
     document.getElementById('todos').appendChild(ul);
-}*/
+}
 
+Here we have added another function which converts the inputs in an unordered list but the problem is it is repeating data after every input.*/
 
 //============================================
 //-----------  STEP - 3 ----------------------
 //============================================
 
 
-/*
 function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
@@ -84,16 +85,16 @@ function show() {
     document.getElementById('todos').appendChild(ul);
 }
 show();
-*/
-
-
+/*
+Here we have added another function which converts the inputs in an unordered list but the problem is it is repeating data after every input.
+    Here we have solved the repeating problem. and we have added a button to delete the tasks from the unordered list. but it doesnt work.*/
 
 //============================================
 //-----------  STEP - 4 ----------------------
 //============================================
 
-
-/*function getTodos() {
+/*
+function getTodos() {
     var todos = [];
     var todos_str = localStorage.getItem('todo');
     if(todos_str !== null)
@@ -162,9 +163,12 @@ function isDone(e) {
     localStorage.setItem('todo',JSON.stringify(todos));
     show();
 }
-show();*/
+show();
 
 
+Here we have added another function which converts the inputs in an unordered list but the problem is it is repeating data after every input.
+    Here we have solved the repeating problem. and we have added a button to delete the tasks from the unordered list. but it doesnt work.
+    Now we have solved the deleting button problem it now deletes the actual list index.*/
 
 
 
@@ -184,4 +188,3 @@ HINT: use text-decoration:line-through; property of CSS
 
 
 */
-
