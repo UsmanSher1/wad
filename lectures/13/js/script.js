@@ -18,7 +18,22 @@ var questions = [{
         "if",
         "for",
         "none of the above"],
-    correctAnswer : 1
+    correctAnswer : 1},{
+
+    question: "which one is bird =?",
+    choices: ["select",
+    "loin",
+    "crocodile",
+    "parrot"],
+    correctAnswer : 4},{
+
+    question: "which one is vegetable =?",
+    choices: ["select",
+        "apple",
+        "banana",
+        "carrot"],
+    correctAnswer : 4
+
 }];
 
 var currentQuestion = 0;
@@ -27,10 +42,31 @@ var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
-    /*Write your code here */
+    var Answer = document.querySelector("input[type = radio]:checked");
+
+    if(Answer == null) {
+        var msg_relay = document.getElementById("quiz-message");
+        msg_relay.style.color = 'blue';
+        msg_relay.style.display = "block";
+        msg_relay.innerText = "No option was Selected";
+    }
+    else if(Answer.question[currentQuestion].correctAnswer ) {
+        correctAnswers++;
+        currentQuestion++;
+        displayCurrentQuestion();
+    }
+    else {
+        currentQuestion++;
+        displayCurrentQuestion();
+    }
 }
 
 function displayCurrentQuestion() {
+    document.getElementById("question").innerHTML=questions[currentQuestion].question;
+    for (var i=0;i<questions[currentQuestion].choices.length;i++)
+    {
+        document.getElementById("choice-list").innerHTML+='<li><input type="radio"name="answer"value="i">'+questions[currentQuestion].choices[i]+'</li>';
+    }
     /*Write your code here */
 }
 
