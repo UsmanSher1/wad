@@ -1,4 +1,5 @@
-var questions = [{
+var questions = [
+    {
     question : "When a user views a page containing a JavaScript program, which machine actually executes the script?",
     choices : [ "The User's machine running a Web browser",
         "The Web server",
@@ -18,22 +19,7 @@ var questions = [{
         "if",
         "for",
         "none of the above"],
-    correctAnswer : 1},{
-
-    question: "which one is bird =?",
-    choices: ["select",
-    "loin",
-    "crocodile",
-    "parrot"],
-    correctAnswer : 4},{
-
-    question: "which one is vegetable =?",
-    choices: ["select",
-        "apple",
-        "banana",
-        "carrot"],
-    correctAnswer : 4
-
+    correctAnswer : 1
 }];
 
 var currentQuestion = 0;
@@ -42,32 +28,50 @@ var quizOver = false;
 displayCurrentQuestion();
 document.getElementById("quiz-message").style.display = 'none';
 function displayNext() {
-    var Answer = document.querySelector("input[type = radio]:checked");
-
-    if(Answer == null) {
-        var msg_relay = document.getElementById("quiz-message");
-        msg_relay.style.color = 'blue';
-        msg_relay.style.display = "block";
-        msg_relay.innerText = "No option was Selected";
-    }
-    else if(Answer.question[currentQuestion].correctAnswer ) {
-        correctAnswers++;
-        currentQuestion++;
+    if(!quizOver){
+        var selectedValue = null;
+        if(document.querySelector('input[name="dq"]:checked') !== null)
+            selectedValue = document.querySelector('input[name="dq"]:checked').value;
+        if (selectedValue == null) {
+            document.getElementById("quiz-message").innerText = "Please selected an answer"
+            document.getElementById("quiz-message").style.display = 'block';
+        } else{
+            document.getElementById("quiz-message").style.display = 'none';
+            if(selectedValue == questions[currentQuestion].correctAnswer){
+                correctAnswers++;
+            }
+            currentQuestion++;
+            if(currentQuestion < questions.length){
+                displayCurrentQuestion();
+            }
+            else {
+                displayScore();
+                document.getElementById("next-btn").innerText = "Play Again?"
+                quizOver = true;
+            }
+        }
+    } else {
+        quizOver = false;
+        document.getElementById("next-btn").innerText = "Next Question";
+        resetQuiz();
         displayCurrentQuestion();
-    }
-    else {
-        currentQuestion++;
-        displayCurrentQuestion();
+        hideScore();
     }
 }
 
 function displayCurrentQuestion() {
-    document.getElementById("question").innerHTML=questions[currentQuestion].question;
-    for (var i=0;i<questions[currentQuestion].choices.length;i++)
-    {
-        document.getElementById("choice-list").innerHTML+='<li><input type="radio"name="answer"value="i">'+questions[currentQuestion].choices[i]+'</li>';
+    var question = questions[currentQuestion].question;
+    var questionId = document.getElementById("question");
+    var choiceList = document.getElementById("choice-list");
+    var numChoices = questions[currentQuestion].choices.length;
+
+    questionId.innerText = question;
+    choiceList.innerHTML = "";
+    var choice;
+    for(var i=0; i<numChoices; i++){
+        choice = questions[currentQuestion].choices[i];
+        choiceList.innerHTML += "<li><input type='radio' value='"+i+"' name='dq'>" + choice + "</li>";
     }
-    /*Write your code here */
 }
 
 function resetQuiz() {
