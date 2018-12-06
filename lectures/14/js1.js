@@ -1,11 +1,11 @@
-/*const key = 'abc123';
+const key = 'abc123';
 let points = 50;
 let winner = false;
 
-let points = 60;*/
+let points = 60;
 
 
-/*
+
 const key = 'abc123';
 let points = 50;
 let winner = false;
@@ -13,45 +13,45 @@ let winner = false;
 if(points > 40) {
     let winner = true
 }
-console.log(winner);*/
+console.log(winner);
 
 
-/*const key = 'abc123';
+const key = 'abc123';
 let points = 50;
 let winner = false;
 
 points = 60;
-console.log(points);*/
+console.log(points);
 
 
-/*const key = 'abc123';
+const key = 'abc123';
 let points = 50;
 let winner = false;
 
-key = 'abc1234';*/
+key = 'abc1234';
 
 
-/*const person = {
+const person = {
     name: 'Wes',
     age: 28
 }
 
 person.name= 'Wesley';
 person.address= '123';
-console.log(person);*/
+console.log(person);
 
-/*person = {
+person = {
     name: 'ali'
-}*/
+}
 
 
-/*
+
 const wes = Object.freeze(person);
 wes.address= '789';
-console.log(wes);*/
+console.log(wes);
 
 
-/*getValue();
+getValue();
 function getValue() {
     if (1===1) {
         let value = "blue";
@@ -64,24 +64,24 @@ function getValue() {
     }
     // value doesn't exist here
     console.log(value);
-}*/
+}
 
 
-/*// Valid constant
+// Valid constant
 const maxItems = 30;
 // Syntax error: missing initialization
-const name;*/
+const name;
 
 
 
-/*if({ name: 'ali' } === { name: 'ali' }){
+if({ name: 'ali' } === { name: 'ali' }){
     alert('equal');
 } else{
     alert('not equal');
-}*/
+}
 
 
-/*
+
 var a = {
     myFunction: function quiz() { console.log('hi'); }
 };
@@ -94,11 +94,11 @@ if(a.myFunction === b.myFunction){
     alert('equal');
 } else{
     alert('not equal');
-}*/
+}
 
 
 
-/*
+
 function quiz() {
     return 'a';
 }
@@ -114,11 +114,11 @@ if(a.myFunction === b.myFunction){
     alert('equal');
 } else{
     alert('not equal');
-}*/
+}
 
 
 
-/*function myEventListeningFunction() {
+function myEventListeningFunction() {
     console.log('howdy');
 }
 
@@ -126,7 +126,7 @@ if(a.myFunction === b.myFunction){
 document.addEventListener('click', myEventListeningFunction);
 
 // immediately removes the click listener that should run the `myEventListeningFunction` function
-document.removeEventListener('click', myEventListeningFunction);*/
+document.removeEventListener('click', myEventListeningFunction);
 
 
 
